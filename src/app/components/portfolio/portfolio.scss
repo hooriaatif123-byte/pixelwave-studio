@@ -1,0 +1,41 @@
+@use "../../../styles.scss" as *;
+
+.portfolio {
+  background-color: $light-bg;
+  color: $text-color;
+  padding: 6rem 0;
+  text-align: center;
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    span {
+      color: $primary-color;
+    }
+  }
+
+  .section-subtitle {
+    color: $secondary-gray;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform $transition-fast;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

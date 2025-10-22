@@ -1,0 +1,91 @@
+@use "../../../styles.scss" as *;
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e1e2f, #00b4d8);
+  color: $text-light;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.hero-content {
+  z-index: 2;
+  animation: fadeInUp 1.2s ease both;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+
+    span {
+      color: $primary-color;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: lighten($secondary-gray, 20%);
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    background-color: $primary-color;
+    color: $text-light;
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color $transition-fast, transform $transition-fast;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      transform: translateY(-3px);
+    }
+  }
+}
+
+/* 🌈 Animated Gradient Overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 180deg at 50% 50%, #00b4d8, #ff4081, #00b4d8);
+  animation: rotate 8s linear infinite;
+  opacity: 0.07;
+}
+
+/* ✨ Animations */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}

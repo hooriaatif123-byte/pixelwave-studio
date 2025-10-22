@@ -1,0 +1,21 @@
+<nav class="navbar" [class.scrolled]="scrolled">
+  <div class="container">
+    <div class="logo">
+      <a href="#home">Pixelwave<span> Studio</span></a>
+    </div>
+
+    <ul class="nav-links" [class.active]="menuOpen">
+      <li><a href="#home" (click)="closeMenu()">Home</a></li>
+      <li><a href="#about" (click)="closeMenu()">About</a></li>
+      <li><a href="#services" (click)="closeMenu()">Services</a></li>
+      <li><a href="#portfolio" (click)="closeMenu()">Portfolio</a></li>
+      <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
+    </ul>
+
+    <div class="menu-toggle" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>

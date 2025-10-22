@@ -1,0 +1,91 @@
+@use "../../../styles.scss" as *;
+
+.testimonials {
+  padding: 6rem 0;
+  background-color: $dark-bg;
+  color: $text-light;
+  text-align: center;
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    span {
+      color: $primary-color;
+    }
+  }
+
+  .section-subtitle {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: lighten($secondary-gray, 25%);
+    font-size: 1rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .testimonial-card {
+    background: lighten($dark-bg, 5%);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .feedback {
+      font-style: italic;
+      line-height: 1.8;
+      color: lighten($text-light, 10%);
+      margin-bottom: 1.5rem;
+      position: relative;
+
+      &::before {
+        content: "“";
+        color: $accent-color;
+        font-size: 2rem;
+        position: absolute;
+        left: -10px;
+        top: -10px;
+      }
+
+      &::after {
+        content: "”";
+        color: $accent-color;
+        font-size: 2rem;
+        position: absolute;
+        right: -10px;
+        bottom: -10px;
+      }
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $primary-color;
+    }
+  }
+}
+
+// ✅ Responsive adjustments
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 4rem 1rem;
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .testimonial-card {
+      padding: 1.5rem;
+    }
+  }
+}
